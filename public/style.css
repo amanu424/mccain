@@ -1,0 +1,267 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FFF9E6;
+}
+
+.container {
+    border-radius: 5px;
+    width: 100%;
+/*    max-width: 1100px;*/
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header styles */
+header {
+    background-color: #FFD700;
+    color: #333;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    pos
+    max-width: 1rem!important;
+    border: 6px solid black;
+}
+
+.logo img{
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #003087;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 0;
+}
+
+h1 {
+    color: #003087;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    margin-bottom: 2rem;
+}
+
+form, .profile-container,  {
+    background-color: #FFF;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group, .info-group {
+    margin-bottom: 1rem;
+}
+.user-list {
+    position: relative!important;
+}
+.user-image{
+    position: absolute;
+    right: 1.5rem;
+    top: 5%;
+    max-width: 100px;
+    max-height: 100px;
+
+}
+label, .info-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+input[type="submit"], .edit-button, .user-details-link {
+    background-color: #FFD700;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+input[type="submit"]:hover, .edit-button:hover, .user-details-link:hover {
+    background-color: #FFC300;
+}
+
+/* Profile styles */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.pending {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.approved {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.rejected {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+/* User list styles */
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1rem;
+    background-color: ;
+    padding: .5rem;
+}
+
+.user-card {
+    background-color: #FFF;
+    padding: 1rem;
+    margin-inline: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid gray;
+}
+
+.user-card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.user-card p {
+    margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.humberger{
+    height: 50px;
+    width: 50px;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header-content {
+/*        flex-direction: column;*/
+/*        align-items: flex-start;*/
+    }
+    nav{
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        z-index: 12129718;
+        top: 100%;
+        right: 1rem;
+        flex-direction: column;
+
+        width: 100%;
+        background-color: yellow;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

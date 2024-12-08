@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Approval Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.approvalStatus %></td>
+                <td>
+                    <form action="/admin/approve/<%= user._id %>" method="POST"><button>Approve</button></form>
+                    <form action="/admin/reject/<%= user._id %>" method="POST"><button>Reject</button></form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
