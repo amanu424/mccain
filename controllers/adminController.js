@@ -1,5 +1,7 @@
+const userRepository = require('../repositories/userRepository');
 exports.listUsers = async (req, res) => {
     const users = await userRepository.findAllUsers();
+ 
     res.render('admin/users', { users });
 };
 

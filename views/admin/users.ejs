@@ -1,3 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Users | McCain Foods Careers</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <ul id="adminNav">
+      <a href="/approved"> 
+        Approved Lists
+      </a>
+      <a href="/admin/users">Applied Users</a>
+      <a href="/register">Add New User</a>
+    </ul>
+
+</header>
+    <main class="container">
+        <h1>Applied Users</h1>
+        
+        <div class="user-list">
+          <% users.forEach(user => { %>
+            <div class="user-card">
+              <div>
+                  <h3><%= user.name %></h3>
+                  <p><%=user.age%> years old</p>
+                  <div class="approve-reject">
+                     <form action="/admin/approve/<%= user._id %>" method="POST"><button id="approve">Approve</button></form>
+                    <form action="/admin/reject/<%= user._id %>" method="POST"><button id="reject">Reject</button></form>
+                  </div>
+              </div>
+              <div>
+                  <img src="<%user.photo%>" alt="<%=user.photo%>" class="user-image">
+              </div>
+            </div>
+        <%  }) %>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 McCain Foods Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
 <table>
     <thead>
         <tr>

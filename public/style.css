@@ -11,7 +11,37 @@ body {
     color: #333;
     background-color: #FFF9E6;
 }
+#adminNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: ;
+}
+#adminNav > a{
+  font-weight: bold;
+  
+}
 
+.approve-reject{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.approve-reject button{
+  padding: .5rem 1rem;
+  border: none;
+
+  border-radius: 5px;
+}
+#approve{
+  background-color: teal;
+  color: white;
+}
+#reject{
+  background-color: darkred;
+  color: white;
+}
 .container {
     border-radius: 5px;
     width: 100%;
@@ -23,8 +53,10 @@ body {
 /* Header styles */
 header {
     background-color: #FFD700;
+    background-color: #fff;
     color: #333;
     padding: 1rem 0;
+    height: 5rem;
 }
 
 .header-content {
@@ -34,9 +66,9 @@ header {
 }
 
 .logo {
-    pos
+    position: ;
     max-width: 1rem!important;
-    border: 6px solid black;
+    
 }
 
 .logo img{
@@ -73,11 +105,15 @@ nav ul li a:hover {
 
 /* Main content styles */
 main {
-    padding: 2rem 0;
+    padding: 5rem 1rem!important;
+    background-color: #003087;
+    background-color: rgb(0, 59, 117);
+  color: #fff;
 }
 
 h1 {
     color: #003087;
+    color: #fff;
     margin-bottom: 1rem;
 }
 
@@ -85,27 +121,23 @@ h1 {
     margin-bottom: 2rem;
 }
 
-form, .profile-container,  {
-    background-color: #FFF;
-    padding: 2rem;
+.form, .profile-container  {
+    background-color: #FFF!important;
+    color: rgb(0,59,117)!important;
+    padding: 3rem 2rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
+.form{
+  border: 1px solid #FFD700;
+}
 .form-group, .info-group {
     margin-bottom: 1rem;
 }
 .user-list {
     position: relative!important;
 }
-.user-image{
-    position: absolute;
-    right: 1.5rem;
-    top: 5%;
-    max-width: 100px;
-    max-height: 100px;
 
-}
 label, .info-label {
     display: block;
     margin-bottom: 0.5rem;
@@ -120,8 +152,8 @@ input[type="file"],
 select,
 textarea {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
+    padding: 0.75rem .5rem;
+    border: 1px solid #b5b5b5;
     border-radius: 3px;
 }
 
@@ -137,10 +169,15 @@ input[type="submit"], .edit-button, .user-details-link {
     display: inline-block;
 }
 
-input[type="submit"]:hover, .edit-button:hover, .user-details-link:hover {
+input[type="submit"]:hover, .edit-button:hover {
     background-color: #FFC300;
 }
-
+.user-details-link{
+    background-color: #155724;
+    color: #fff;
+    padding: .5rem 1.25rem;;
+  
+}
 /* Profile styles */
 .profile-header {
     display: flex;
@@ -194,13 +231,26 @@ input[type="submit"]:hover, .edit-button:hover, .user-details-link:hover {
 
 .user-card {
     background-color: #FFF;
+    color: rgb(0, 59, 117);
     padding: 1rem;
     margin-inline: 0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.user-image{
+    /* position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+    bottom: 1rem; */
+    border-radius: 5px;
+    max-width: 100px;
+    max-height: 100px;
 
+}
 .user-card h2 {
     margin-bottom: 0.5rem;
 }
