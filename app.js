@@ -20,8 +20,9 @@ app.use(express.static('public'));
 // Session Setup
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 48 },
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
 }));
 
@@ -30,6 +31,7 @@ const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 app.use('/', userRoutes);
 app.use('/admin', adminRoutes);
+app.use('*', (req, res) => res.redirect('/'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -10,6 +10,18 @@ class UserRepository {
         return await User.findById(id);
     }
 
+    async findApprovedUsers() {
+        return await User.find({ approvalStatus: "Accepted"});
+    }
+
+    async findPendingUsers() {
+        return await User.find({ approvalStatus: "Pending"});
+    }
+
+    async deleteUser(id) {
+        return await User.deleteOne({ _id: id})
+    }
+
     async findAllUsers() {
         return await User.find();
     }

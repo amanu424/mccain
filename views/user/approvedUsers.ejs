@@ -11,16 +11,8 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo"><img src="McCain%20Foods%20Global%20Corporate%20Website%20_%20McCain.com_files/logo-mccain.png" alt="McCain Logo"></a>
-                <nav>
-                    <ul id="menu">
-                        <li><a href="apply.html">Apply</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="approved-users.html">Approved Users</a></li>
-                    </ul>
-                </nav>
-                <button id="menu-toggle" class="menu-toggle">
-                    <img src="/images.svg" class="humberger" />
-                </button>
+                
+               
             </div>
         </div>
     </header>
@@ -33,11 +25,11 @@
             <div class="user-card">
               <div>
                   <h3><%= user.name %></h3>
-                  <p>Male, 32 years old</p>
+                  <p><%=user.age%> years old</p>
                   <div class="user-details-link">APPROVED</div>
               </div>
               <div>
-                  <img src="/home-page-image.jpg" class="user-image">
+                  <img src="<%=user.photo%>" class="user-image">
               </div>
             </div>
         <%  }) %>
@@ -50,6 +42,5 @@
         </div>
     </footer>
 
-    <script src="/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,97 @@
-<html>
-  <body>
-    <h1>Thanks for submitting. We will notify you soon!</h1>
-    <%= users.length %>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Applying</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #fff9c4, #ffffff);
+            padding: 1rem;
+        }
+        .content {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        .card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            background-color: #fbc02d;
+            color: #000;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #f9a825;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h1>Thank You for Applying!</h1>
+            <p>We've received your application and we'll be in touch soon. Our team is reviewing your submission and will contact you regarding the next steps.</p>
+            <div class="card">
+                <h2>What's Next?</h2>
+                <ul>
+                    <li>Our team will review your application</li>
+                    <li>We'll contact you for next steps</li>
+                </ul>
+            </div>
+            <a href="/" class="button">Return to Homepage</a>
+        </div>
+    </div>
+</body>
 </html>

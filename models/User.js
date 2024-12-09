@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     code: { type: Number, required: true },
     phone: { type: String, required: true },
     approvalStatus: { type: String, default: 'Pending' },
+    public_id: {type: String},
     photo: { type: String },
 }, { timestamps: true });
 
