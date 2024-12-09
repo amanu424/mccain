@@ -4,7 +4,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
 dotenv.config();
-
+const path = require("path")
 const app = express();
 
 // MongoDB Connection
@@ -13,9 +13,11 @@ connectDB()
 
 // Middlewares
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+app.set('views', path.join(__dirname, 'views'))
+
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session Setup
 app.use(session({
