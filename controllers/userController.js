@@ -5,7 +5,7 @@ const cloudinary = require("cloudinary").v2;
 exports.registerUser = async (req, res) => {
   try {
       const result = await cloudinary.uploader.upload(req.file.path);
-        console.log('Upload result:', result);
+    
       const newClient = {
           name: req.body.name,
           age: req.body.age,
@@ -26,7 +26,6 @@ exports.registerUser = async (req, res) => {
 exports.approvedUsers = async (req, res) => {
   try {
     const users = await userRepository.findApprovedUsers();
-    console.log(users)
     res.render("user/approvedUsers", { users });
   } catch (err) {
     res.redirect("/");

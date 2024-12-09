@@ -1,14 +1,25 @@
 const cloudinary = require('../config/cloudinary')
 const userRepository = require('../repositories/userRepository');
 exports.listUsers = async (req, res) => {
-    const users = await userRepository.findPendingUsers();
- 
-    res.render('admin/users', { users });
+
+    try {
+        const users = await userRepository.findPendingUsers();
+     
+        res.render('admin/users', { users });
+    } catch(e) {
+        console.log(e);
+        res.redirect('/admin/users')
+    }
 };
 
 exports.approveUser = async (req, res) => {
-    await userRepository.updateUser(req.params.id, { approvalStatus: 'Accepted' });
-    res.render('admin/users');
+    try {
+        await userRepository.updateUser(req.params.id, { approvalStatus: 'Accepted' });
+        res.redirect('admin/users'); 
+    } catch(e) {
+        console.log(e);
+        res.redirect('/admin/users')
+    }
 };
 
 exports.rejectUser = async (req, res) => {
@@ -20,6 +31,6 @@ exports.rejectUser = async (req, res) => {
         res.redirect('/admin/users');
     } catch(err) {
         console.log(err)
-        res.json({err: err})
+        res.redirect('/admin/users')
     }
 };
