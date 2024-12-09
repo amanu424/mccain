@@ -12,6 +12,9 @@ router.post('/reject/:id', auth, adminController.rejectUser);
 
 
 router.get('/login', (req, res) => {
+	if(req.session && req.session.admin) {
+		return res.redirect('/admin/users')
+	}
 	res.render('admin/login')
 })
 router.post('/login', async (req, res) => {
